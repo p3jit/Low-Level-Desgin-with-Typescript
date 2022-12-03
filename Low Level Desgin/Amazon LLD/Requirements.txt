@@ -1,0 +1,19 @@
+1.  Guest and Customer can search by products by different parameters.
+    1.a Search by category.
+    1.b Search by tags.
+    1.c Search by Name.
+    etc.
+2.  Guest can create a new Account.
+3.  Customer with account can perform cart related oprations.
+    3.a Add product to cart.
+    3.b Remove product from cart.
+    etc.
+4.  Admin can perform product realted operations.
+    4.a Add product to store.
+    4.b Remove product from store.
+    etc.
+5. Customer can rate and review products and see other rating and review as well.Guest can also see other rating and review as well.
+6. Customer can have multiple address stored in their account.
+7. Review can have media in them.(Review with images and videos etc).
+8. Customer can see all the pastOrder as HistoricalOrder.
+9. Customer should also track the order with their OrderStatus.

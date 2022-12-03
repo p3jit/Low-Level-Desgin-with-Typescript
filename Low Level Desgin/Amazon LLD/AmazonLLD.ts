@@ -1,3 +1,13 @@
+class Account {
+    name: String;
+    email: String;
+    address: Array<Address>;
+    phoneNumber: Number;
+    userName: String;
+    passWord: String;
+    accountStatus: AccountStatus;
+}
+
 class Guest {
 	guestID: Number;
 	searchService: SearchService;
@@ -8,11 +18,11 @@ class Guest {
 class Customer extends Guest {
 	account: Account;
 	cartService: CartService;
-	orderList: Array<HistorialOrder>;
+	orderList: Array<HistoricalOrder>;
 
 	public rateProduct(product: Product, rating: Number): void {};
 	public reviewProduct(product: Product, review: Review): void {};
-	public getHistoricalOrders(): Array<HistorialOrder> {};
+	public getHistoricalOrders(): Array<HistoricalOrder> {};
 	public trackOrder(orderID: Number): Order {};
 }
 
@@ -21,16 +31,14 @@ class Admin extends Customer {
 	public editProduct(product: Product): void {};
 	public removeProduct(product: Product): void {};
 	public updateProduct(product: Product): void {};
+	public addTag(product: Product): void {};
 }
 
-class Account {
-    name: String;
-    email: String;
-    address: Array<Address>;
-    phoneNumber: Number;
-    userName: String;
-    passWord: String;
-    accountStatus: AccountStatus;
+class Address {
+	buildingNumber: Number;
+	streetName: String;
+	pinCode: Number;
+	landMark: String;
 }
 
 class Attachment {
@@ -44,7 +52,7 @@ class Review {
 	attachmentList: Array<Attachment>;
 }
 
-interface Product {
+class Product {
 	productID: Number;
 	rating: Number;
 	name: String;
@@ -52,6 +60,7 @@ interface Product {
 	reviewList: Array<Review>;
 	price: Number;
 	productCategory: ProductCategory;
+	tag: Array<String>;
 }
 
 class Order {
@@ -87,22 +96,20 @@ class CartService {
 class Mobile extends Product {
 	productCategory: ProductCategory.MOBILE;
 	display: String;
-	camera: Stirng;
+	camera: String;
 	processor: String;
-	.
-	.
-	.
-	.
+	/*
+	Add more properties as required.	
+	*/
 }
 
 class Shirt extends Product {
 	productCategory: ProductCategory.SHIRT;
 	size: String;
 	type: String;
-	.
-	.
-	.
-	.
+	/*
+	Add more properties as required.	
+	*/
 }
 
 // You can create mutiple products like this 
@@ -112,9 +119,9 @@ enum ProductCategory {
 	SHIRT,
 	APPLIANCE,
 	COMPUTER,
-	.
-	.
-	.
+	/*
+	Add more properties as required.	
+	*/
 }
 
 enum OrderStatus {

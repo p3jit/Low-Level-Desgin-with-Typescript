@@ -11,7 +11,7 @@ class ATM {
 	atmID: Number;
 	cardReader: CardReader;
 	keypad: Keypad;
-	screen: Screen;
+	screen: ScreenDisplay;
 	bankService: BankService;
 	cashDispenser: CashDispenser;
 }
@@ -24,14 +24,14 @@ class Keypad {
 	public getInput(): String {};
 }
 
-class Screen {
+class ScreenDisplay {
 	public showDisplay(text: String): void {};
 }
 
 class CashDispenser {
 	cashInfo: Map<CashType,Cash[]>;
 
-	public getAvailableCash(CashType): Number {};
+	public getAvailableCash(cashType: CashType): Number {};
 	public dispenseCash(amount: Number): void {};
 }
 
@@ -70,7 +70,7 @@ class DepositCash extends Transaction {
 }
 
 class DepostyCheque extends Transaction {
-	transactionType: Deposit.CHEQUE;
+	transactionType: DepositType.CHEQUE;
 	cheque: Cheque;
 }
 
@@ -112,7 +112,7 @@ class Cash {
 }
 
 class Bank {
-	name: Stirng:
+	name: String;
 	address: Address;
 	atmList: ATM[];
 }
