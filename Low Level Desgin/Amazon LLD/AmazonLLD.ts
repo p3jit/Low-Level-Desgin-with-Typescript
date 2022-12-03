@@ -26,7 +26,7 @@ class Customer extends Guest {
 	public trackOrder(orderID: Number): Order {};
 }
 
-class Admin extends Customer {
+class Seller extends Customer {
 	public addProduct(product: Product): void {};
 	public editProduct(product: Product): void {};
 	public removeProduct(product: Product): void {};
@@ -93,6 +93,25 @@ class CartService {
 	public checkout(order: Order, paymentType: PaymentType): HistoricalOrder {};
 }
 
+class System {
+	public sendNotification(message: Message) : void {};
+}
+
+class Message {
+	messageID: Number;
+	messageText: String;
+}
+
+class EmailMessage {
+	messageType: MessageType.EMAIL;
+	destinationEmail: String;
+}
+
+class SMSMessage {
+	messageType: MessageType.SMS;
+	destinationPhoneNumber: Number;
+}
+
 class Mobile extends Product {
 	productCategory: ProductCategory.MOBILE;
 	display: String;
@@ -155,4 +174,9 @@ enum AccountStatus {
     SUSPENDED,
     BANNED,
     BLOCKED
+}
+
+enum MessageType {
+	SMS,
+	EMAIL
 }
