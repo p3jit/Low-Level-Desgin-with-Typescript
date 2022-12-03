@@ -149,7 +149,6 @@ enum OrderStatus {
 	FULFILLED,
 	DELIVERED
 }
-
 enum AttachmentType {
 	IMAGE,
 	VIDEO,
